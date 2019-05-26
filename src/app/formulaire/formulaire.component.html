@@ -1,0 +1,151 @@
+<mat-card-title>
+    <h6>Ajouter Nouveau Client </h6>
+</mat-card-title>
+
+
+<mat-card>
+    <form [formGroup]="customerForm"
+          (ngSubmit)="addClient()">
+        <mat-dialog-content>
+            <mat-form-field style="width: 100%">
+
+                <input
+                        matInput
+                        placeholder="Nom"
+                        formControlName="nom"
+                        name="nom"
+                        required
+
+                />
+                <mat-error *ngIf="nom?.errors?.required"
+                >Nom est obligatoire
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+
+                <input
+                        matInput
+                        placeholder="Prenom"
+                        formControlName="prenom"
+                        name="prenom"
+                        required
+                />
+                <!--<mat-error *ngIf="prenom?.errors?.required"
+                  >Prenom est obligatoire</mat-error>-->
+            </mat-form-field>
+
+            <label style="color: slategrey">Sexe: </label>
+            <br>
+            <mat-radio-group class="tp-radio-group" formControlName="sexe">
+                <mat-radio-button class="tp-radio-button"
+                                  value="H"   color="primary" >
+                    Homme
+                </mat-radio-button>
+                <mat-radio-button class="tp-radio-button"
+                                  value="F"   color="primary">
+                    Femme
+                </mat-radio-button>
+            </mat-radio-group>
+
+
+            <mat-form-field style="width: 100%">
+                <input
+                        matInput
+                        placeholder="Age"
+                        formControlName="age"
+
+                        name="age"
+                        required
+                />
+                <!--<mat-error *ngIf="age?.errors?.required"
+                  >Age est Obligatoire</mat-error>-->
+            </mat-form-field>
+            <mat-form-field style="width: 100%">
+                <input
+                        matInput
+                        placeholder="Adresse"
+                        formControlName="adresse"
+
+                        name="adresse"
+                        required
+                />
+                <!--<mat-error *ngIf="adresse?.errors?.required">Adresse est Obligatoire</mat-error>-->
+            </mat-form-field>
+            <mat-form-field style="width: 100%">
+                <input
+                        matInput
+                        placeholder="Téléphone"
+                        formControlName="telephone"
+
+                        name="telephone"
+                        required
+                />
+                <!--<mat-error *ngIf="telephone?.errors?.required">Telephone est Obligatoire</mat-error>-->
+            </mat-form-field>
+
+            <label style="color: slategrey">Etat Civil: </label>
+            <br>
+            <mat-radio-group class="tp-radio-group" formControlName="etat">
+                <mat-radio-button class="tp-radio-button"
+                                  value="M" name="etat" color="primary">
+                    Marié
+                </mat-radio-button>
+                <mat-radio-button class="tp-radio-button"
+                                  value="C" name="etat" color="primary" >
+                    Celibataire
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <br> <br>
+
+            <div class="tp-section">
+                <label style="color: slategrey">Carte fidélité: </label>
+                <br>
+
+                <mat-radio-group class="tp-radio-group" formControlName="carteF">
+                    <mat-radio-button class="tp-radio-button"
+                                      value="true"  color="primary">
+                        oui
+                    </mat-radio-button>
+                    <mat-radio-button class="tp-radio-button"
+                                      value="false"  color="primary" >
+                        non
+                    </mat-radio-button>
+                </mat-radio-group>
+
+
+            </div>
+
+            <br> <br>
+
+            <div class="tp-section">
+                <label style="color: slategrey">Carte crédit: </label>
+                <br>
+
+                <mat-radio-group class="tp-radio-group" formControlName="carteC">
+                    <mat-radio-button class="tp-radio-button"
+                                      value="true"  color="primary" >
+                        oui
+                    </mat-radio-button>
+                    <mat-radio-button class="tp-radio-button"
+                                      value="false"  color="primary" >
+                        non
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </mat-dialog-content>
+
+
+        <mat-dialog-actions>
+
+            <button mat-button mat-stroked-button color="primary" type="submit" >
+                Ajouter
+            </button>
+
+            <button mat-button mat-dialog-close mat-stroked-button color="warn">
+                Annuler
+            </button>
+        </mat-dialog-actions>
+    </form>
+</mat-card>

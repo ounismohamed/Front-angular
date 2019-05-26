@@ -1,0 +1,15 @@
+
+.tp-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+ }
+
+ .tp-checkbox-button{
+     margin: 5px;
+ }
+
+.tp-label{
+    text-decoration-color: lightslategray;
+}

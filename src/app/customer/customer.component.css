@@ -1,0 +1,141 @@
+
+.addbtn{
+  border: 0ch;
+  line-height: 2.5;
+  font-size: 1rem;
+  text-align: center;
+  
+}
+.customerstable {
+  width: 1170px;
+  
+}
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.customerstable  * {
+  position: relative;
+}
+.customerstable  td, .customerstable  th {
+  padding-left: 8px;
+}
+.head thead {
+      height: 60px;
+      background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+.table-head th{
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  
+
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+ 
+.head {
+  width: auto ;
+  padding-left: 40px;
+ 
+}
+
+.search-hero {
+max-width: 500px;
+padding-bottom: 50px;
+margin:auto;
+}
+.customerstable{
+box-shadow: 0 10px 40px 0 #B0C1D9;
+margin-right: auto;
+margin-left: auto}
+thead th{
+  height: 60px;
+  background: #82d1d5;
+  width: auto ;
+  padding-left: 40px;
+  color: #f5f5f5;
+}
+
+#custom-search-input{
+padding: 3px;
+border: solid 1px #E4E4E4;
+border-radius: 6px;
+background-color: #fff;
+}
+
+#custom-search-input input{
+border: 0;
+box-shadow: none;
+}
+
+#custom-search-input button{
+margin: 2px 0 0 0;
+background: none;
+box-shadow: none;
+border: 0;
+color: #666666;
+padding: 0 8px 0 10px;
+border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+border: 0;
+box-shadow: none;
+border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+font-size: 23px;
+}
+
+.btn {
+color: #0bb2d4;
+border-color : #0bb2d4;
+ background: transparent;
+ 
+ margin-right: auto;
+ margin-left: auto;
+}

@@ -1,0 +1,115 @@
+
+<div>
+
+    <h3 style="text-align: center"> <i> Nos Clients</i> </h3>
+ 
+    
+  <div class="search-div">
+    <button mat-stroked-button color="primary" style="float: right" (click)="formcustomer()">
+      <mat-icon>add</mat-icon>Ajouter Nouveau Client
+    </button>
+
+    <mat-form-field >
+     
+      <input matInput [(ngModel)]="searchKey" placeholder="Chercher" autocomplete="off" (keyup)="applyFilter()">
+    </mat-form-field>
+
+      <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+
+   
+  <table mat-table [dataSource]="dataSource" matSort>
+
+     
+  
+
+      <ng-container matColumnDef="nom" >
+          <mat-header-cell *matHeaderCellDef ><b> Nom </b></mat-header-cell>
+          <mat-cell *matCellDef="let client">{{client.nom}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="prenom">
+          <mat-header-cell *matHeaderCellDef><b>Prenom</b></mat-header-cell>
+          <mat-cell *matCellDef="let client">{{client.prenom}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="sexe">
+        <mat-header-cell *matHeaderCellDef><b>Sexe</b></mat-header-cell>
+        <mat-cell *matCellDef="let client">{{client.sexe}}</mat-cell>
+
+    </ng-container>
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef><b>Age</b> </mat-header-cell>
+        <mat-cell *matCellDef="let client">{{client.age}}</mat-cell>
+
+  
+    </ng-container>
+    <ng-container matColumnDef="adresse">
+      <mat-header-cell *matHeaderCellDef> <b> Adresse</b> </mat-header-cell>
+      <mat-cell *matCellDef="let client">{{client.adresse}}</mat-cell>
+
+   
+  </ng-container>
+  
+  <ng-container matColumnDef="telephone">
+    <mat-header-cell *matHeaderCellDef> <b>Téléphone</b> </mat-header-cell>
+    <mat-cell *matCellDef="let client">{{client.telephone}}</mat-cell>
+
+</ng-container>
+
+<ng-container matColumnDef="etat_Civil">
+  <mat-header-cell *matHeaderCellDef> <b>Etat Civil</b> </mat-header-cell>
+  <mat-cell *matCellDef="let client">{{client.etat_Civil}}</mat-cell>
+
+</ng-container>
+
+<ng-container matColumnDef="carte_Credit">
+  <mat-header-cell *matHeaderCellDef> <b>Carte Credit </b> </mat-header-cell>
+  
+  <mat-cell *matCellDef="let client">{{client.carte_Credit}}</mat-cell>
+
+</ng-container>
+
+<ng-container matColumnDef="carte_Fidelite">
+  <mat-header-cell *matHeaderCellDef> <b>Carte fidélité</b> </mat-header-cell>
+  <mat-cell *matCellDef="let client">{{client.carte_Fidelite}}</mat-cell>
+
+</ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+
+           
+    <button type="button" mat-icon-button color="primary" (click)="formUpdate(row.id)" ><i class="fas fa-user-edit"></i>Update</button>
+    
+       
+        </mat-cell>
+      </ng-container>
+      
+	  
+	  <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+
+    
+    <button  type="button"  mat-icon-button color="warn" style="float: right" (click)="deleteClient(row.id)"><mat-icon>delete_outline</mat-icon>Delete</button>
+       
+        </mat-cell>
+      </ng-container>
+ 
+
+  </table>
+ <mat-paginator
+    #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="4"
+    [pageSizeOptions]="[4,10, 20, 30, 40]"
+  >
+  </mat-paginator>
+
+</div>
